@@ -1,8 +1,7 @@
 # Cloud Computing Final Project
 This is the final project for the class CSCI 39583 Cloud Computing. 
 
-**Goal**
-Notice of Non-Affiliation and Disclaimer
+**Notice of Non-Affiliation and Disclaimer**
 
 We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Spotify Technology S.A., or any of its subsidiaries or its affiliates. The official Spotify can be found at https://www.spotify.com/.
 
@@ -28,8 +27,8 @@ The names Spotify Technology S.A. and Spotify as well as related names, marks, e
 This is the goal.
 
 ## Product Spec
-- [] Figma Wireframe
-- [] Webpage accepts MP3 audio files
-- [] Link Share Generator
-- [] Playlist creation based on imported MP3 files
+- [x] Figma Wireframe
+- [ ] Webpage accepts MP3 audio files
+- [ ] Link Share Generator
+- [ ] Playlist creation based on imported MP3 files
 
