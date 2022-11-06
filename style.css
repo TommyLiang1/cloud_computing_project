@@ -13,7 +13,7 @@ body {
 }
 
 #container {
-  width: 300px;
+  width: 500px;
   height: 120px;
   margin: auto;
   display: flex;
@@ -24,14 +24,18 @@ body {
 #logo {
   max-width: 100px; 
   height: auto;
+  padding-right: 20%;
 }
 
 #name, #logo{
   display: inline-block;
-  padding-left: 50%;
   font-size: 100px;
-
   text-shadow: -25px 25px red, -50px 50px blue;
+}
+
+#input-container {
+  margin-top: 50px;
+  text-align: center;
 }
 
 p {
@@ -105,8 +109,7 @@ footer {
 
 .button {
   font-family: 'VT323', monospace ;
-	font-size: 24px;
-  font-size: 50px;
+	font-size: 40px;
 }
 
 .button-36:hover {
@@ -116,6 +119,6 @@ footer {
 
 @media (min-width: 768px) {
   .button-36 {
-    padding: 0 2.6rem;
+    padding: 0 2rem;
   }
 }
