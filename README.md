@@ -4,10 +4,6 @@ This is the final project for the class CSCI 39583 Cloud Computing.
 
 [Webpage Link](TANMOY MAKE THE GITHUB PAGES)
 
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
