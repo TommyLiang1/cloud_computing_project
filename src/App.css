@@ -11,3 +11,9 @@ body {
   background-size: 100%;
   background-color: rgb(208, 202, 242);
 }
+
+#user {
+  width: 650px;
+  margin: auto;
+  margin-top: 70px;
+}

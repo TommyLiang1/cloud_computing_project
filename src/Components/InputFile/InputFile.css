@@ -22,3 +22,15 @@
   margin-top: 100px;
   text-align: center;
 }
+
+.tracks {
+  margin: auto;
+  margin-top: 20px;
+  width: 330px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.sound {
+  margin-top: 10px;
+}

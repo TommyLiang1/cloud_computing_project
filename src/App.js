@@ -3,16 +3,22 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import InputFile from './Components/InputFile/InputFile';
 
-function App() {
+import { withAuthenticator } from '@aws-amplify/ui-react';
+
+function App({ signOut, user}) {
   return (
-    <div>
+    <div className='App'>
       <Header />
+      <div id="user">
+        <span>User Email: {user.attributes.email}</span>
+        <button onClick={signOut}>Sign Out</button>
+      </div>
       <InputFile />
-      <div>Hello World</div>
       <Footer />
     </div>
-    // <Body />
   );
 }
 
-export default App;
+export default withAuthenticator(App, {
+  socialProviders: ['google', 'facebook']
+});

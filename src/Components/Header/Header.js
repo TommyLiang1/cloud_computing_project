@@ -9,7 +9,7 @@ class Header extends Component {
         <div id="container">
           <img src={logo} id="logo" alt="img_loading..."/>
           <h1 id="name">Spotify++</h1>
-        </div> 
+        </div>
       </header>
     );
   }
