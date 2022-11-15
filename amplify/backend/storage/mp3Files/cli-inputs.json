@@ -1,0 +1,17 @@
+{
+  "resourceName": "mp3Files",
+  "policyUUID": "411b3219",
+  "bucketName": "mp3files",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "groupAccess": {}
+}

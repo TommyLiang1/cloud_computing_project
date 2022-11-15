@@ -1,0 +1,23 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cloudcomputingauth-staging-160651-authRole",
+      "UnauthRoleArn": "arn:aws:iam::098242975690:role/amplify-cloudcomputingauth-staging-160651-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::098242975690:role/amplify-cloudcomputingauth-staging-160651-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cloudcomputingauth-staging-160651-deployment",
+      "UnauthRoleName": "amplify-cloudcomputingauth-staging-160651-unauthRole",
+      "StackName": "amplify-cloudcomputingauth-staging-160651",
+      "StackId": "arn:aws:cloudformation:us-east-1:098242975690:stack/amplify-cloudcomputingauth-staging-160651/dae6ff90-61da-11ed-aa31-12634edbcda9",
+      "AmplifyAppId": "d37mqnq7nsocwb"
+    },
+    "categories": {
+      "auth": {
+        "cloudcomputingauth": {}
+      },
+      "storage": {
+        "mp3Files": {}
+      }
+    }
+  }
+}
