@@ -11,6 +11,17 @@ import { AmplifyProvider } from '@aws-amplify/ui-react';
 
 Amplify.configure(config);
 
+// const theme = {
+//   name: 'pretty',
+//   token: {
+//     colors: {
+//       background: {
+//         primary: {value: 'skyblue'}
+//       }
+//     }
+//   }
+// }
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render( 
   <AmplifyProvider>

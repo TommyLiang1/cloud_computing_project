@@ -5,8 +5,8 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-          <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script></p>
-          <p>Version 15.1.03.03 </p>
+          <p className="end">Copyright &copy; <script>document.write(new Date().getFullYear())</script></p>
+          <p className="end">Version 15.1.03.03 </p>
       </footer>
     );
   }

@@ -38,14 +38,15 @@ const InputFile = () => {
       result.forEach(item => {
         if(item.key !== '') {
           Storage.get(item.key).then(result => {
-          const audio = document.createElement('audio');
-          const source = document.createElement('source');
-          audio.appendChild(source);
-          audio.setAttribute("controls","");
-          source.setAttribute("src", result);
-          source.setAttribute("type", "audio/mpeg");
+            const audio = document.createElement('audio');
+            const source = document.createElement('source');
+            audio.appendChild(source);
+            audio.setAttribute("controls","");
+            audio.setAttribute("class","sound")
+            source.setAttribute("src", result);
+            source.setAttribute("type", "audio/mpeg");
 
-          document.querySelector('.tracks').appendChild(audio);
+            document.querySelector('.tracks').appendChild(audio);
           })
         }
       })
@@ -60,8 +61,7 @@ const InputFile = () => {
       </form>
       <div className="playlist">
         <h1>Mp3 Playlist</h1>
-        <div className="tracks">
-      </div>
+        <div className="tracks"></div>
       </div>
     </div>
   );

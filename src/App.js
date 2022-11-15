@@ -19,6 +19,4 @@ function App({ signOut, user}) {
   );
 }
 
-export default withAuthenticator(App, {
-  socialProviders: ['google', 'facebook']
-});
+export default withAuthenticator(App);
