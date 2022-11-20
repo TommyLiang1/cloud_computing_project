@@ -39,17 +39,12 @@ function InputFile() {
       Storage.put(file.name, file)
         .then(item => {
           console.log(item);
-          loadfiles();
         })
         .catch(err => {
           console.log(err);
         })
     })
   }, [])
-  
-  const loadfiles = () => {
-
-  }
 
   Storage.list('')
     .then(result => {
