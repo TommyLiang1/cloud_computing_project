@@ -13,7 +13,6 @@ function InputFile() {
   }, []);
 
   useEffect(() => {
-    loadfiles();
     document.getElementById('upload-form').addEventListener('submit', e => {
       e.preventDefault();
       const file = document.getElementById('file-upload').files[0];
@@ -46,6 +45,18 @@ function InputFile() {
     })
   }, [])
 
+  const removeFile = (file) => {
+    console.log(file);
+    // Storage.remove(file)
+    //   .then(res => {
+    //     console.log(res);
+    //     // document.querySelector('.tracks').removeChild(file);
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   })
+  }
+
   Storage.list('')
     .then(result => {
       result.forEach((item, i) => {
@@ -56,8 +67,10 @@ function InputFile() {
             const text = document.createTextNode(item.key);
             const audio = document.createElement('audio');
             const source = document.createElement('source');
+            const button = document.createElement('button');
             fdiv.appendChild(sdiv);
             fdiv.appendChild(audio);
+            fdiv.appendChild(button);
             fdiv.setAttribute("class", "m-file")
             sdiv.appendChild(text);
             audio.appendChild(source);
@@ -65,6 +78,8 @@ function InputFile() {
             audio.setAttribute("class","sound")
             source.setAttribute("src", result);
             source.setAttribute("type", "audio/mpeg");
+            button.textContent = 'delete';
+            button.addEventListener("click", removeFile(item.key));
 
             document.querySelector('.tracks').appendChild(fdiv);
           })
