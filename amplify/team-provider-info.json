@@ -19,5 +19,26 @@
         "mp3Files": {}
       }
     }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cloudcomputingauth-prod-200754-authRole",
+      "UnauthRoleArn": "arn:aws:iam::098242975690:role/amplify-cloudcomputingauth-prod-200754-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::098242975690:role/amplify-cloudcomputingauth-prod-200754-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cloudcomputingauth-prod-200754-deployment",
+      "UnauthRoleName": "amplify-cloudcomputingauth-prod-200754-unauthRole",
+      "StackName": "amplify-cloudcomputingauth-prod-200754",
+      "StackId": "arn:aws:cloudformation:us-east-1:098242975690:stack/amplify-cloudcomputingauth-prod-200754/197e8cf0-654b-11ed-af97-0a43fafcba6d",
+      "AmplifyAppId": "d37mqnq7nsocwb"
+    },
+    "categories": {
+      "auth": {
+        "cloudcomputingauth": {}
+      },
+      "storage": {
+        "mp3Files": {}
+      }
+    }
   }
 }

@@ -25,14 +25,22 @@
 
 .playlist {
   margin: auto;
-  width: 330px;
+  width: 600px;
   margin-top: 20px;
 }
 
-.tracks {
+/* .tracks {
   margin-top: 20px;
   max-height: 300px;
   overflow-y: scroll;
+} */
+
+.index {
+  display: inline-block;
+}
+
+.filename {
+  display: inline-block;
 }
 
 .sound {
