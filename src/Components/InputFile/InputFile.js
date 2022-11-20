@@ -6,9 +6,9 @@ import mp3 from './Justin_Bieber_Ghost.mp3';
 
 function InputFile() {
   const ref = useRef(null);
-  const audioRef = useRef(null);
-  const [files, setFiles] = useState([]);
-  const [audioSrc, setAudioSrc] = useState();
+  // const audioRef = useRef(null);
+  // const [files, setFiles] = useState([]);
+  // const [audioSrc, setAudioSrc] = useState();
 
   useEffect(() => {
     Amplify.configure(awsconfig);
@@ -104,26 +104,33 @@ function InputFile() {
         })
     })
   }, [])
-
+  
   Storage.list('')
     .then(result => {
-      result.forEach(item => {
+      result.forEach((item, i) => {
         if(item.key !== '') {
           Storage.get(item.key).then(result => {
+            const fdiv = document.createElement('div');
+            const sdiv = document.createElement('div');
+            const text = document.createTextNode(item.key);
             const audio = document.createElement('audio');
             const source = document.createElement('source');
+            fdiv.appendChild(sdiv);
+            fdiv.appendChild(audio);
+            sdiv.appendChild(text);
             audio.appendChild(source);
             audio.setAttribute("controls","");
             audio.setAttribute("class","sound")
             source.setAttribute("src", result);
             source.setAttribute("type", "audio/mpeg");
 
-            document.querySelector('.tracks').appendChild(audio);
+            document.querySelector('.tracks').appendChild(fdiv);
           })
         }
       })
     })
     .catch(err => console.log(err));
+    
 
   return (
     <div>
