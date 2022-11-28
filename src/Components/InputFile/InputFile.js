@@ -3,19 +3,6 @@ import Amplify, { Storage } from "aws-amplify";
 import awsconfig from '../../aws-exports';
 import './InputFile.css';
 
-// function removeFile(file) {
-//   console.log("Removing File");
-//   console.log(file);
-//   Storage.remove(file)
-//   //   .then(res => {
-//   //     console.log(res);
-//   //     //document.querySelector('.tracks').removeChild(file);
-//   //   })
-//   //   .catch(err => {
-//   //     console.log(err);
-//   //   })
-// }
-
 function InputFile() {
   useEffect(() => {
     Amplify.configure(awsconfig);
@@ -34,6 +21,7 @@ function InputFile() {
 
       const fileurl = URL.createObjectURL(file);
       
+      // Create HTML display for MP3 file
       const div = document.createElement('div');
       const text = document.createTextNode(file.name);
       const audio = document.createElement('audio');
@@ -50,6 +38,7 @@ function InputFile() {
       source.setAttribute("type", "audio/mpeg");
       button.setAttribute("class", "delete");
       button.textContent = 'X';
+      // Add a remove MP3 file functionality for every added MP3 file
       button.addEventListener("click", 
         function() {
           Storage.remove(file.name)
@@ -64,6 +53,7 @@ function InputFile() {
       )
       document.querySelector('.tracks').appendChild(div);
       
+      // Add MP3 file to S3
       Storage.put(file.name, file)
         .then(item => {
           console.log(item);
@@ -71,9 +61,13 @@ function InputFile() {
         .catch(err => {
           console.log(err);
         })
+      
+      // Reset form
+      document.getElementById('upload-form').reset();
     })
   }, [])
 
+  // Load all MP3 files in S3 corresponding to user
   Storage.list('')
     .then(result => {
       result.forEach((item, i) => {
@@ -95,6 +89,7 @@ function InputFile() {
             source.setAttribute("type", "audio/mpeg");
             button.setAttribute("class", "delete");
             button.textContent = 'X';
+            // Add a remove MP3 file functionality for every existing MP3 file
             button.addEventListener("click", 
               function() {
                 Storage.remove(item.key)
@@ -118,7 +113,7 @@ function InputFile() {
     <div>
       <form id="upload-form">
         <input id="file-upload" type="file" name="filename" accept=".mp3"/>
-        <input className="button-36" type="submit" value="Upload"/>
+        <input id="upload-button" className="button-36" type="submit" value="Upload"/>
       </form>
       <div className="playlist">
         <h1>Mp3 Playlist</h1>
