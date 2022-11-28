@@ -5,18 +5,6 @@ import InputFile from './Components/InputFile/InputFile';
 
 import { withAuthenticator } from '@aws-amplify/ui-react';
 
-// class App extends Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       currentUser: Number,
-//       allUsers: [{
-//         userEmail: String, 
-//         userPlaylist: []
-//       }]
-//     }
-//   }
-
 function App({ signOut, user }) {
   return (
     <div className='App'>

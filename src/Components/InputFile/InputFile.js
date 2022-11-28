@@ -3,6 +3,19 @@ import Amplify, { Storage } from "aws-amplify";
 import awsconfig from '../../aws-exports';
 import './InputFile.css';
 
+// function removeFile(file) {
+//   console.log("Removing File");
+//   console.log(file);
+//   Storage.remove(file)
+//   //   .then(res => {
+//   //     console.log(res);
+//   //     //document.querySelector('.tracks').removeChild(file);
+//   //   })
+//   //   .catch(err => {
+//   //     console.log(err);
+//   //   })
+// }
+
 function InputFile() {
   useEffect(() => {
     Amplify.configure(awsconfig);
@@ -17,23 +30,39 @@ function InputFile() {
       e.preventDefault();
       const file = document.getElementById('file-upload').files[0];
 
+      console.log(file);
+
       const fileurl = URL.createObjectURL(file);
       
-      const fdiv = document.createElement('div');
-      const sdiv = document.createElement('div');
+      const div = document.createElement('div');
       const text = document.createTextNode(file.name);
       const audio = document.createElement('audio');
       const source = document.createElement('source');
-      fdiv.appendChild(sdiv);
-      fdiv.appendChild(audio);
-      fdiv.setAttribute("class", "m-file")
-      sdiv.appendChild(text);
+      const button = document.createElement('button');
+      div.appendChild(text);
+      div.appendChild(audio);
+      div.appendChild(button);
+      div.setAttribute("class", "m-file")
       audio.appendChild(source);
       audio.setAttribute("controls","");
       audio.setAttribute("class","sound")
       source.setAttribute("src", fileurl);
       source.setAttribute("type", "audio/mpeg");
-      document.querySelector('.tracks').appendChild(fdiv);
+      button.setAttribute("class", "delete");
+      button.textContent = 'X';
+      button.addEventListener("click", 
+        function() {
+          Storage.remove(file.name)
+            .then(res => {
+              console.log(res);
+              document.querySelector('.tracks').removeChild(div);
+            })
+            .catch(err => {
+              console.log(err);
+            })
+        }
+      )
+      document.querySelector('.tracks').appendChild(div);
       
       Storage.put(file.name, file)
         .then(item => {
@@ -45,43 +74,40 @@ function InputFile() {
     })
   }, [])
 
-  const removeFile = (file) => {
-    console.log(file);
-    // Storage.remove(file)
-    //   .then(res => {
-    //     console.log(res);
-    //     // document.querySelector('.tracks').removeChild(file);
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   })
-  }
-
   Storage.list('')
     .then(result => {
       result.forEach((item, i) => {
         if(item.key !== '') {
           Storage.get(item.key).then(result => {
-            const fdiv = document.createElement('div');
-            const sdiv = document.createElement('div');
+            const div = document.createElement('div');
             const text = document.createTextNode(item.key);
             const audio = document.createElement('audio');
             const source = document.createElement('source');
             const button = document.createElement('button');
-            fdiv.appendChild(sdiv);
-            fdiv.appendChild(audio);
-            fdiv.appendChild(button);
-            fdiv.setAttribute("class", "m-file")
-            sdiv.appendChild(text);
+            div.appendChild(text);
+            div.appendChild(audio);
+            div.appendChild(button);
+            div.setAttribute("class", "m-file")
             audio.appendChild(source);
             audio.setAttribute("controls","");
             audio.setAttribute("class","sound")
             source.setAttribute("src", result);
             source.setAttribute("type", "audio/mpeg");
-            button.textContent = 'delete';
-            button.addEventListener("click", removeFile(item.key));
-
-            document.querySelector('.tracks').appendChild(fdiv);
+            button.setAttribute("class", "delete");
+            button.textContent = 'X';
+            button.addEventListener("click", 
+              function() {
+                Storage.remove(item.key)
+                  .then(res => {
+                    console.log(res);
+                    document.querySelector('.tracks').removeChild(div);
+                  })
+                  .catch(err => {
+                    console.log(err);
+                  })
+              }
+            )
+            document.querySelector('.tracks').appendChild(div);
           })
         }
       })

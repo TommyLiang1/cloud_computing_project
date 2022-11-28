@@ -19,7 +19,7 @@
 }
 
 #upload-form {
-  margin-top: 100px;
+  margin-top: 50px;
   text-align: center;
 }
 
@@ -31,8 +31,9 @@
 
 .tracks {
   margin-top: 20px;
-  max-height: 300px;
+  max-height: 350px;
   overflow-y: scroll;
+  position: relative;
 }
 
 .index {
@@ -45,4 +46,40 @@
 
 .sound {
   margin-top: 5px;
+}
+
+.delete {
+  position: absolute;
+  margin-left: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  z-index: 1;
+
+  transition: color 300ms ease-in-out;
+}
+
+.delete::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 10px;
+  background-color: lightgrey;
+
+  transition: transform 300ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.delete:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.delete:hover {
+  color: red;
 }
