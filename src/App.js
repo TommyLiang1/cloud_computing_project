@@ -10,7 +10,7 @@ function App({ signOut, user }) {
     <div className='App'>
       <Header />
       <div id="user">
-        <span>User Email: {user.attributes.email}</span>
+        <div>User Email: {user.attributes.email}</div>
         <button onClick={signOut}>Sign Out</button>
       </div>
       <InputFile />

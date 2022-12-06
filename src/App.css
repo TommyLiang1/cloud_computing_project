@@ -15,5 +15,22 @@ body {
 #user {
   width: 650px;
   margin: auto;
-  margin-top: 70px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+#user > button {
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#user > button:hover {
+  background-color: lightgray;
+}
+
+div.App {
+  min-height: 100vh;
+  position: relative;
 }

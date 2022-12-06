@@ -16,9 +16,7 @@ function InputFile() {
     document.getElementById('upload-form').addEventListener('submit', e => {
       e.preventDefault();
       const file = document.getElementById('file-upload').files[0];
-
-      console.log(file);
-
+      
       const fileurl = URL.createObjectURL(file);
       
       // Create HTML display for MP3 file
@@ -117,9 +115,9 @@ function InputFile() {
       </form>
       <div className="playlist">
         <h1>Mp3 Playlist</h1>
-        <div className="tracks">          
-        </div>
+        <div className="tracks"></div>
       </div>
+      <div className="footerLength"></div>
     </div>
   );
 }

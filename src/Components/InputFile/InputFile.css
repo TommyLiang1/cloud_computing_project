@@ -19,21 +19,26 @@
 }
 
 #upload-form {
-  margin-top: 50px;
+  margin-top: 30px;
   text-align: center;
 }
 
 .playlist {
   margin: auto;
   width: 400px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .tracks {
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   max-height: 350px;
   overflow-y: scroll;
   position: relative;
+}
+
+.footerLength {
+  height: 84px;
 }
 
 .index {
