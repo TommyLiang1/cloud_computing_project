@@ -2,11 +2,13 @@
 
 This is the final project for the class CSCI 39583 Cloud Computing.
 
-[Webpage Link](TANMOY MAKE THE GITHUB PAGES)
-
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm i`
+
+Downloads the required packages.
 
 ### `npm start`
 
@@ -52,6 +54,5 @@ This is the goal.
 ## Product Spec
 
 - [x] Figma Wireframe
-- [ ] Webpage accepts MP3 audio files
-- [ ] Link Share Generator
-- [ ] Playlist creation based on imported MP3 files
+- [x] Webpage accepts MP3 audio files
+- [x] Playlist creation based on imported MP3 files
