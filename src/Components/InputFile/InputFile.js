@@ -7,7 +7,7 @@ function InputFile() {
   useEffect(() => {
     Amplify.configure(awsconfig);
     Storage.configure({
-      bucket: 'mp3files160651-staging',
+      bucket: 'mp3files200754-prod',
       level: 'private'
     })
   }, []);
